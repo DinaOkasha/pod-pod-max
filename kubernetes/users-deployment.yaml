@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deployment
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: users
+  template:
+    metadata:
+      labels:
+        app: users
+    spec:
+      containers:
+        - name: users
+          image: drdinaokasha/k8s-max-users:latest
+          env:
+            - name: AUTH_ADDRESS
+              value: "auth-service.default"
+              # value: "10.97.222.169"
+              # value: "auth-service.default"
+              # value: localhost
+            # - name: AUTH_SERVICE_SERVICE_HOST
+              # value: "10.97.222.169"
+              # value: localhost
+        # - name: auth
+        #   image: drdinaokasha/k8s-max-auth:latest    
