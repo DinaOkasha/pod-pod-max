@@ -17,7 +17,6 @@ spec:
           image: drdinaokasha/k8s-max-tasks:latest
           env:
             - name: AUTH_ADDRESS
-              # value: "10.99.104.252"
               value: "auth-service.default"
             - name: TASKS_FOLDER
               value: tasks

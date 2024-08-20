@@ -17,12 +17,15 @@ spec:
           image: drdinaokasha/k8s-max-users:latest
           env:
             - name: AUTH_ADDRESS
-              value: "auth-service.default"
-              # value: "10.97.222.169"
-              # value: "auth-service.default"
-              # value: localhost
-            # - name: AUTH_SERVICE_SERVICE_HOST
-              # value: "10.97.222.169"
-              # value: localhost
-        # - name: auth
-        #   image: drdinaokasha/k8s-max-auth:latest    
+              value: "auth-service.default"        #it is service name + . + the namespace name
+
+
+
+            # - name: AUTH_ADDRESS                 /in case using clusterIP for pod-pod connection
+              # value: "10.97.222.169" 
+
+            # OR 
+        
+              # value: localhost                   /in case communication between containers inside the same pod
+           
+         
